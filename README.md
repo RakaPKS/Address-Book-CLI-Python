@@ -1,7 +1,4 @@
-# Address Book implemented in python
-## Plan
-
-Step 1: Make CMD solution with temp storage
+# Address Book CLI implemented in python
 
 ## Basic Requirements
 
