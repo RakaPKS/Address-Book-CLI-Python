@@ -3,14 +3,6 @@
 
 Step 1: Make CMD solution with temp storage
 
-Step 2: Add permanent database
-
-Step 3: Create Desktop UI
-
-Step 4: Create Web version
-
-Step 5: Create iOS app?
-
 ## Basic Requirements
 
 - Contact info:
@@ -27,5 +19,5 @@ Step 5: Create iOS app?
 
 ## Advanced Requirements
 
-- Import/Exporting to CSV
+- Import/Exporting to JSON
 
