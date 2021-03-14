@@ -1,3 +1,6 @@
+import json
+
+
 class ContactManager:
     __contactsList = []
 
@@ -24,6 +27,21 @@ class ContactManager:
         for contact in self.__contactsList:
             if name in contact.name and address in contact.address and email in contact.email and phone in contact.phone:
                 contact.prettyPrint()
+
+    def exportContacts(self):
+        jsonData = json.dumps(self.__contactsList, default=lambda o: o.__dict__,
+                              indent=4)
+        with open('contacts.json', 'w') as f:
+            f.write(jsonData)
+
+    def importContacts(self):
+        newContactsList = []
+        with open('contacts.json', 'r') as f:
+            contacts = json.loads(f.read())
+        for contact in contacts:
+            newContactsList.append(
+                Contact(contact.get("name"), contact.get("address"), contact.get("email"), contact.get("phone")))
+        self.__contactsList = newContactsList
 
 
 class Contact:

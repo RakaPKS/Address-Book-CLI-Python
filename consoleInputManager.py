@@ -83,6 +83,13 @@ class ConsoleInputManager:
         if respond.lower() == "search":
             self.__createSearch()
             return True
+        if respond.lower() == "export":
+            self.contactManager.exportContacts()
+            print("Successfully exported to contacts.json")
+            return True
+        if respond.lower() == "import":
+            self.contactManager.importContacts()
+            return True
         if respond.lower() == "close":
             print("See you next time!")
             return False
@@ -99,9 +106,10 @@ class ConsoleInputManager:
         | Delete     | Deletes an user
         | Delete all | Removes all users
         | Search     | Search or a user
+        | Export     | Exports the address book
+        | Import     | Imports the address book
         | Close      | Closes the address book"""
         print(welcome)
         while running:
             print(mainMenu)
-            respond = input()
-            running = self.__parse(respond)
+            running = self.__parse(input())
